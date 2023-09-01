@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="text-center text-danger">Bài tập js buổi 7-8</h1>
+      <div class="py-3">
+        <div class="form-group">
+          <label for="">Mời nhập số nguyên:</label>
+          <input
+            type="text"
+            name=""
+            id="num"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <button class="btn btn-success" onclick="makeArr()">Thêm số</button>
+        <p class="mt-3 text-success display-4" id="renderArr"></p>
+      </div>
+      <div class="py-3">
+        <h2>1. Tổng các số dương</h2>
+        <button class="btn btn-success" onclick="calTong(arr)">
+          Tính tổng
+        </button>
+        <p class="mt-3 text-success display-4" id="tongDuong"></p>
+      </div>
+      <div class="py-3">
+        <h2>2. Số lượng số dương</h2>
+        <button class="btn btn-success" onclick="countDuong(arr)">
+          Đếm số dương
+        </button>
+        <p class="mt-3 text-success display-4" id="slDuong"></p>
+      </div>
+      <div class="py-3">
+        <h2>3. Số nhỏ nhất</h2>
+        <button class="btn btn-success" onclick="findMin(arr)">Tìm min</button>
+        <p class="mt-3 text-success display-4" id="minNum"></p>
+      </div>
+      <div class="py-3">
+        <h2>4. Số dương nhỏ nhất</h2>
+        <button class="btn btn-success" onclick="findMinDuong(arr)">
+          Tìm min dương
+        </button>
+        <p class="mt-3 text-success display-4" id="minNumDuong"></p>
+      </div>
+      <div class="py-3">
+        <h2>5. Số chẵn cuối cùng</h2>
+        <button class="btn btn-success" onclick="findChanCuoi(arr)">
+          Tìm số chẵn cuối cùng
+        </button>
+        <p class="mt-3 text-success display-4" id="chanCuoi"></p>
+      </div>
+      <div class="py-3">
+        <h2>6. Đổi chỗ hai vị trí</h2>
+        <div class="form-group">
+          <label for="">Mời nhập vị trí muốn đổi chỗ thứ nhất</label>
+          <input
+            type="text"
+            name=""
+            id="swap1"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <div class="form-group">
+          <label for="">Mời nhập vị trí muốn đổi chỗ thứ hai</label>
+          <input
+            type="text"
+            name=""
+            id="swap2"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <button class="btn btn-success" onclick="swap(arr)">Đổi chỗ</button>
+        <p class="mt-3 text-success display-4" id="renderAfterSwap"></p>
+      </div>
+      <div class="py-3">
+        <h2>7. Sắp xếp tăng dần</h2>
+        <button class="btn btn-success" onclick="arrangeUp(arr)">
+          Sắp xếp
+        </button>
+        <p class="mt-3 text-success display-4" id="arrangeUp"></p>
+      </div>
+      <div class="py-3">
+        <h2>8. Tìm số nguyên tố đầu tiên</h2>
+        <button class="btn btn-success" onclick="inPrimeNum(arr)">Tìm</button>
+        <p class="mt-3 text-success display-4" id="primeNum"></p>
+      </div>
+      <div class="py-3">
+        <h2>9. Nhập thêm 1 mảng số thực, tìm số lượng số nguyên</h2>
+
+        <div class="form-group">
+          <label for="">Mời nhập số thực:</label>
+          <input
+            type="text"
+            name=""
+            id="num1"
+            class="form-control"
+            placeholder=""
+            aria-describedby="helpId"
+          />
+        </div>
+        <button class="btn btn-success" onclick="makeArr1()">Thêm số</button>
+
+        <p class="mt-3 text-success display-4" id="renderArr1"></p>
+        <button class="btn btn-success" onclick="findInteger(arr1)">
+          Đếm số nguyên
+        </button>
+        <p class="mt-3 text-success display-4" id="slInteger"></p>
+      </div>
+      <div class="py-3">
+        <h2>10. Đếm số lượng số âm dương</h2>
+        <button class="btn btn-success" onclick="countAmDuong(arr)">
+          So sánh
+        </button>
+        <p class="mt-3 text-success display-4" id="ssAmDuong"></p>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
