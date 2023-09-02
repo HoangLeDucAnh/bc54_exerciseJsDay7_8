@@ -3,4 +3,20 @@
 }
 .change-color {
   background-color: #007bff21 !important;
+  
+}
+.btn-link{
+  color:black;
+  font-size: 30px;
+  text-decoration: none;
+  transition: all .5s;
+
+}
+.btn-link:hover{
+  color: blue;
+  text-decoration: none;
+
+}
+.btn-link:focus{
+  text-decoration: none;
 }

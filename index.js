@@ -170,12 +170,14 @@ function inPrimeNum(array) {
     array
   )} là số nguyên tố đầu tiên`;
 }
-let btnCardHeader = document.querySelectorAll(".btn.btn-link");
-btnCardHeader.forEach((btn, index) => {
-  let cardHeader = btn.closest(".card-header");
-  let isClicked = false;
-  cardHeader.onclick = function () {
-    isClicked = !isClicked;
-    cardHeader.classList.toggle("change-color", isClicked);
-  };
+let cardHeaderList = document.querySelectorAll(".card-header");
+cardHeaderList.forEach((card, index) => {
+  $(`#collapse${index+1}`).on('show.bs.collapse', function () {
+    card.classList.add('change-color')
+  })
+  $(`#collapse${index+1}`).on('hide.bs.collapse', function () {
+    card.classList.remove('change-color')
+  })
 });
+
+
